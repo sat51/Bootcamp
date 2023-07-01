@@ -1,24 +1,48 @@
 import logo from './logo.svg';
 import './App.css';
+import React,{useEffect,useState} from 'react';
+
+
+import Navbar from './components/Navbar';
+import TopNews from './components/TopNews';
+import Technology from './components/Technology';
+import Films from './components/Films';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
+import Sports from './components/Sports';
+import Header from './components/Header';
+
+
+
 
 function App() {
+  
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+   <Header/>
+    <Navbar/>
+    
+    <Routes>
+    
+      <Route path='/technology' element={<Technology/>}/>
+      <Route path='/sports' element={<Sports/>}/>
+      <Route path='/films' element={<Films/>}/>
+      <Route path='/topnews' element={<TopNews/>}/>
+      
+    </Routes>
+    </BrowserRouter>
+     
+     
+    </>
+    
   );
 }
 
